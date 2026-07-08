@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 2 - Circuitos Combinacionales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0e27;
+    color: #e4e4e7;
+    padding: 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { color: #34d399; margin: 30px 0 20px 0; }
+  h2 { color: #60a5fa; margin: 25px 0 15px 0; }
+  h3 { color: #fbbf24; margin: 15px 0 10px 0; }
+  p { line-height: 1.6; margin-bottom: 10px; }
+  .section { background: #1a1f3a; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #34d399; }
+  .actividad { background: #2d3748; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #60a5fa; }
+  .video-container { margin: 20px 0; }
+  iframe { width: 100%; height: 500px; border-radius: 8px; border: 2px solid #34d399; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background: #0a0e27;
+  }
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #404854;
+  }
+  th { background: #1a3a2a; color: #34d399; font-weight: 600; }
+  .btn-link {
+    display: inline-block;
+    background: #34d399;
+    color: #0a0e27;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: background 0.3s;
+  }
+  .btn-link:hover { background: #10b981; }
+  .formulas { background: #2a3f5f; padding: 15px; border-radius: 6px; margin: 10px 0; font-family: 'IBM Plex Mono', monospace; }
+  .lista { margin-left: 20px; }
+  .lista li { margin: 8px 0; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🔧 Unidad 2: Circuitos Combinacionales</h1>
+  <p style="color: #34d399; font-weight: 600;">Esencial para entender cómo funcionan los circuitos lógicos complejos</p>
+
+  <!-- Video Tutorial -->
+  <div class="section">
+    <h2>📹 Video Tutorial: Introducción a Electrónica Digital</h2>
+    <p>Continúa aprendiendo con este video fundamental:</p>
+    <div class="video-container">
+      <iframe src="https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/preview" frameborder="0" allow="autoplay"></iframe>
+    </div>
+  </div>
+
+  <!-- Tema 1 -->
+  <div class="section">
+    <h2>1️⃣ Multiplexores (MUX)</h2>
+    <p>Un multiplexor es un circuito combinacional que selecciona una de múltiples entradas de datos y la envía a una única salida.</p>
+
+    <h3>Características:</h3>
+    <ul class="lista">
+      <li><strong>Entradas de datos:</strong> 2^n (donde n es el número de líneas de selección)</li>
+      <li><strong>Líneas de selección:</strong> n líneas que eligen qué entrada pasar</li>
+      <li><strong>Salida:</strong> Una única línea de salida</li>
+      <li><strong>Aplicaciones:</strong> Transmisión de datos, comunicaciones, conmutación</li>
+    </ul>
+
+    <h3>Tabla de verdad: Multiplexor 4:1 (2 líneas de selección)</h3>
+    <table>
+      <tr>
+        <th>S1</th>
+        <th>S0</th>
+        <th>Salida Y</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>I0 (entrada 0)</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>I1 (entrada 1)</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>I2 (entrada 2)</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>I3 (entrada 3)</td>
+      </tr>
+    </table>
+
+    <h3>Ecuación Booleana:</h3>
+    <div class="formulas">
+      <p>Y = (S1'·S0'·I0) + (S1'·S0·I1) + (S1·S0'·I2) + (S1·S0·I3)</p>
+    </div>
+
+    <div class="actividad">
+      <h3>✏️ Actividad 1: Diseño de Multiplexor</h3>
+      <p><strong>Ejercicio:</strong> Diseña un multiplexor 4:1 en Logic Drawer:</p>
+      <a href="https://logicdrawer.app/logic/" class="btn-link" target="_blank">🎨 Abrir Logic Drawer</a>
+      <ul class="lista" style="margin-top: 15px;">
+        <li>Crea 4 entradas de datos (I0, I1, I2, I3)</li>
+        <li>Crea 2 líneas de selección (S0, S1)</li>
+        <li>Implementa la lógica combinacional</li>
+        <li>Verifica que funcione correctamente</li>
+        <li>Captura pantalla de tu circuito</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tema 2 -->
+  <div class="section">
+    <h2>2️⃣ Decodificadores</h2>
+    <p>Un decodificador es un circuito combinacional que convierte un código de entrada en señales de salida únicas y exclusivas.</p>
+
+    <h3>Características:</h3>
+    <ul class="lista">
+      <li><strong>Entradas:</strong> n líneas (código binario)</li>
+      <li><strong>Salidas:</strong> 2^n líneas (una por cada combinación posible)</li>
+      <li><strong>Funcionamiento:</strong> Solo UNA salida es activa (1) a la vez</li>
+      <li><strong>Aplicaciones:</strong> Selección de memoria, control de dispositivos, decodificación de direcciones</li>
+    </ul>
+
+    <h3>Tabla de verdad: Decodificador 2:4 (2 entradas, 4 salidas)</h3>
+    <table>
+      <tr>
+        <th>A1</th>
+        <th>A0</th>
+        <th>Y0</th>
+        <th>Y1</th>
+        <th>Y2</th>
+        <th>Y3</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+    </table>
+
+    <h3>Ecuaciones Booleanas:</h3>
+    <div class="formulas">
+      <p>Y0 = A1'·A0'</p>
+      <p>Y1 = A1'·A0</p>
+      <p>Y2 = A1·A0'</p>
+      <p>Y3 = A1·A0</p>
+    </div>
+
+    <div class="actividad">
+      <h3>✏️ Actividad 2: Diseño de Decodificador</h3>
+      <p><strong>Ejercicio:</strong> Diseña un decodificador 2:4 en Logic Drawer:</p>
+      <ul class="lista">
+        <li>Crea 2 entradas de dirección (A0, A1)</li>
+        <li>Crea 4 salidas (Y0, Y1, Y2, Y3)</li>
+        <li>Implementa la lógica combinacional</li>
+        <li>Prueba con todas las combinaciones posibles</li>
+        <li>Verifica que solo UNA salida esté activa en cada combinación</li>
+        <li>Captura pantalla de tu diseño</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tema 3 -->
+  <div class="section">
+    <h2>3️⃣ Sumador Completo (Full Adder)</h2>
+    <p>El sumador completo es un circuito que suma dos bits más un acarreo de entrada, produciendo una suma y un acarreo de salida.</p>
+
+    <h3>Entradas:</h3>
+    <ul class="lista">
+      <li><strong>A:</strong> Primer bit a sumar</li>
+      <li><strong>B:</strong> Segundo bit a sumar</li>
+      <li><strong>Cin:</strong> Acarreo de entrada</li>
+    </ul>
+
+    <h3>Salidas:</h3>
+    <ul class="lista">
+      <li><strong>S:</strong> Suma (A + B + Cin)</li>
+      <li><strong>Cout:</strong> Acarreo de salida</li>
+    </ul>
+
+    <h3>Tabla de verdad: Sumador Completo</h3>
+    <table>
+      <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>Cin</th>
+        <th>Suma</th>
+        <th>Cout</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    </table>
+
+    <h3>Ecuaciones Booleanas:</h3>
+    <div class="formulas">
+      <p>Suma = A ⊕ B ⊕ Cin (XOR de los tres)</p>
+      <p>Cout = (A·B) + (Cin·(A ⊕ B))</p>
+    </div>
+
+    <h3>Estructura interna:</h3>
+    <p>El sumador completo se puede construir usando dos sumadores parciales (half adders) más una compuerta OR:</p>
+    <ul class="lista">
+      <li>Half Adder 1: suma A y B</li>
+      <li>Half Adder 2: suma el resultado con Cin</li>
+      <li>Compuerta OR: combina los acarreos</li>
+    </ul>
+
+    <div class="actividad">
+      <h3>✏️ Actividad 3: Diseño de Sumador Completo</h3>
+      <p><strong>Ejercicio:</strong> Construye un sumador completo en Logic Drawer:</p>
+      <a href="https://logicdrawer.app/logic/" class="btn-link" target="_blank">🎨 Abrir Logic Drawer</a>
+      <ul class="lista" style="margin-top: 15px;">
+        <li>Crea las 3 entradas: A, B, Cin</li>
+        <li>Implementa la lógica para calcular Suma y Cout</li>
+        <li>Prueba todos los 8 casos de la tabla de verdad</li>
+        <li>Ejemplo: Cuando A=1, B=1, Cin=1, debe dar Suma=1, Cout=1</li>
+        <li>Captura pantalla de tu diseño funcionando</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Aplicación práctica -->
+  <div class="section">
+    <h2>🔗 Conexión en serie: Sumador de 4 bits</h2>
+    <p>Conectando 4 sumadores completos en cascada, el acarreo de salida (Cout) de uno se conecta al acarreo de entrada (Cin) del siguiente:</p>
+    
+    <ul class="lista">
+      <li><strong>Sumador 0:</strong> suma los bits menos significativos (LSB)</li>
+      <li><strong>Sumador 1:</strong> suma los bits siguientes más el acarreo de Sumador 0</li>
+      <li><strong>Sumador 2:</strong> suma los bits siguientes más el acarreo de Sumador 1</li>
+      <li><strong>Sumador 3:</strong> suma los bits más significativos (MSB) más el acarreo de Sumador 2</li>
+    </ul>
+
+    <div class="actividad">
+      <h3>✏️ Actividad 4: Ejemplo de suma en cascada</h3>
+      <p><strong>Ejercicio:</strong> Suma dos números de 4 bits</p>
+      <p><strong>Número A:</strong> 0101 (5 en decimal)</p>
+      <p><strong>Número B:</strong> 0011 (3 en decimal)</p>
+      <p><strong>Resultado esperado:</strong> 1000 (8 en decimal)</p>
+      <ul class="lista">
+        <li>Simula el proceso bit por bit</li>
+        <li>Muestra cómo se propagan los acarreos</li>
+        <li>Verifica el resultado final</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Resumen -->
+  <div class="section">
+    <h2>📚 Resumen de la Unidad 2</h2>
+    <ul class="lista">
+      <li>✅ Comprendiste cómo funcionan los multiplexores</li>
+      <li>✅ Aprendiste a implementar decodificadores</li>
+      <li>✅ Dominaste la construcción de sumadores completos</li>
+      <li>✅ Entendiste cómo conectar circuitos en cascada</li>
+      <li>✅ Diseñaste y simulaste circuitos combinacionales</li>
+    </ul>
+  </div>
+
+  <div style="text-align: center; margin: 40px 0; padding: 20px; background: #1a3a2a; border-radius: 8px;">
+    <p style="color: #34d399; font-size: 18px; font-weight: 600;">Unidad 2 completada ✅</p>
+    <p>Continúa con la Unidad 3: Circuitos Secuenciales</p>
+  </div>
+
+</div>
+
+</body>
+</html>
