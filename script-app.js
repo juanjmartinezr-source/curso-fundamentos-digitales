@@ -32,11 +32,11 @@ const PASOS = [
   { id: "calificacion",  nombre: "Revisar la calificación" }
 ];
 
-// Video tutorial de cada unidad (se carga de forma perezosa al entrar al paso)
+// Video tutorial de cada unidad (se carga de forma perezosa al entrar al paso).
+// Unidad 3 usa una infografía con src fijo en el HTML, por eso no aparece aquí.
 const VIDEOS_UNIDAD = {
-  unidad1: "https://www.youtube.com/embed/VwOkqM4j-ts",
-  unidad2: "https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/preview",
-  unidad3: "https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/preview"
+  unidad1: "https://drive.google.com/file/d/1KgFGtobiCqC5JkPigAKh1V94tc37RBoa/preview", // Lógica a Circuitos
+  unidad2: "https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/preview"  // Logic Drawer IDE (tutorial de la herramienta)
 };
 
 const PREGUNTAS = [
