@@ -9,15 +9,14 @@ const USUARIOS = {
 };
 
 const TEMAS = [
-  "Identificar el tablero de breakers",
-  "Conceptos básicos de fase y neutro",
-  "Tipos de conexiones: serie y paralelo",
-  "Qué tipo de cable se debe usar",
-  "Cómo instalar un interruptor",
-  "Cómo instalar una toma",
-  "Cómo cambiar una bombilla",
-  "Cómo medir electricidad en la casa",
-  "Cómo calcular el consumo de un electrodoméstico"
+  "Sistemas de numeración y conversiones",
+  "Compuertas básicas y tablas de verdad",
+  "Álgebra de Boole: teoremas y simplificación",
+  "Mapas de Karnaugh (2, 3 y 4 variables)",
+  "Multiplexores y decodificadores",
+  "Sumador completo",
+  "Flip-flops D y JK",
+  "Contadores básicos"
 ];
 
 // Los 8 pasos del recorrido solicitado
