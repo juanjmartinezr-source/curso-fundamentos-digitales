@@ -155,7 +155,7 @@ function guardarForo(posts){
 
 /* =========================================================
    GUARDIA DE SESIÓN
-   Si no hay sesión válida guardada, regresa a login.html
+   Si no hay sesión válida guardada, regresa a index.html
 ========================================================= */
 function iniciarApp(usuario){
   usuarioActual = usuario;
@@ -186,7 +186,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (sesion && USUARIOS[sesion]) {
     iniciarApp(sesion);
   } else {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 });
 
