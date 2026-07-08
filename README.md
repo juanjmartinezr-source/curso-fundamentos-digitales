@@ -5,6 +5,25 @@ Curso interactivo sobre electrónica digital y fundamentos de sistemas lógicos.
 
 ---
 
+## 🖥️ Simulación de aula virtual
+
+Además del contenido de cada unidad, el repositorio incluye una simulación interactiva de aula virtual (`index.html` → `curso.html`) que guía al estudiante paso a paso por todo el curso, con progreso guardado en el navegador (localStorage).
+
+**Acceso:** [`index.html`](index.html) · **Usuarios de prueba:** `juan/1234`, `camilo/4321`, `jose/4567`, `maria/7890`
+
+**Recorrido (9 pasos):**
+1. Ingresar al curso
+2. Leer el anuncio inicial
+3. Unidad 1 — material (documento o video) + actividad práctica
+4. Unidad 2 — material (documento o video) + actividad práctica
+5. Unidad 3 — material (documento o video) + última actividad práctica
+6. Participar en el foro
+7. Entregar actividades de las Unidades 1 a 3
+8. Presentar el cuestionario (10 preguntas, mínimo 60% para aprobar)
+9. Revisar la calificación final
+
+---
+
 ## 📚 Estructura del Curso
 
 ### **Unidad 1: Álgebra de Boole y Compuertas Lógicas** 🔌
@@ -60,8 +79,9 @@ Todas las unidades incluyen actividades prácticas con **Logic Drawer**, una her
 ✅ Videos tutoriales embebidos  
 ✅ Ejemplos resueltos  
 ✅ Ecuaciones booleanas explicadas  
-✅ Diagramas de timing  
-✅ Proyecto integrador final  
+✅ Guía de referencia en PDF (`guia-fundamentos-digitales.pdf`)  
+✅ Simulación de aula virtual con progreso guardado por usuario  
+✅ Cuestionario final autoevaluable
 
 ---
 
@@ -81,9 +101,7 @@ Al completar este curso, serás capaz de:
 
 ## 📹 Material Multimedia
 
-Cada unidad incluye un video tutorial de introducción a la electrónica digital:
-
-🎥 **[Ver Video Tutorial](https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/view?usp=sharing)**
+La Unidad 1 incluye un video tutorial introductorio, y las Unidades 2 y 3 incluyen un video complementario alojado en Google Drive. Todos son accesibles tanto desde las páginas de cada unidad como desde la simulación de aula virtual.
 
 ---
 
@@ -91,19 +109,20 @@ Cada unidad incluye un video tutorial de introducción a la electrónica digital
 
 | Recurso | Enlace |
 |---------|--------|
+| Simulación de aula virtual | [Ver](index.html) |
 | Unidad 1 | [Ver](unidad1.html) |
 | Unidad 2 | [Ver](unidad2.html) |
 | Unidad 3 | [Ver](unidad3.html) |
+| Guía de referencia (PDF) | [Descargar](guia-fundamentos-digitales.pdf) |
 | Logic Drawer | [Acceder](https://logicdrawer.app/logic/) |
-| Video Tutorial | [Ver](https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/view?usp=sharing) |
 
 ---
 
 ## 🚀 ¡Comenzar Ahora!
 
-[➡️ Ir a Unidad 1](unidad1.html)
+[➡️ Ir a la simulación de aula virtual](index.html)
 
 ---
 
 **Última actualización:** Julio 2026  
-**Versión:** 1.0
+**Versión:** 1.1
