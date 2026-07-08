@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 1 - Álgebra de Boole y Compuertas Lógicas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0e27;
+    color: #e4e4e7;
+    padding: 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { color: #22d3ee; margin: 30px 0 20px 0; }
+  h2 { color: #fbbf24; margin: 25px 0 15px 0; }
+  h3 { color: #a5b4fc; margin: 15px 0 10px 0; }
+  p { line-height: 1.6; margin-bottom: 10px; }
+  .section { background: #1a1f3a; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #22d3ee; }
+  .actividad { background: #2d3748; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #fbbf24; }
+  .video-container { margin: 20px 0; }
+  iframe { width: 100%; height: 500px; border-radius: 8px; border: 2px solid #22d3ee; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; background: #0a0e27; }
+  th, td { padding: 12px; text-align: center; border: 1px solid #404854; }
+  th { background: #123a44; color: #22d3ee; font-weight: 600; }
+  .btn-link { display: inline-block; background: #22d3ee; color: #0a0e27; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 10px 0; transition: background 0.3s; }
+  .btn-link:hover { background: #06b6d4; }
+  .formulas { background: #2a3f5f; padding: 15px; border-radius: 6px; margin: 10px 0; font-family: 'IBM Plex Mono', monospace; }
+  .lista { margin-left: 20px; }
+  .lista li { margin: 8px 0; }
+  .karnaugh { display: inline-block; margin: 10px 0; }
+  .karnaugh table { width: auto; }
+  .karnaugh th, .karnaugh td { padding: 10px 16px; font-family: 'IBM Plex Mono', monospace; }
+  .teorema { display: flex; justify-content: space-between; gap: 12px; padding: 10px 14px; background: #0a0e27; border-radius: 6px; margin: 8px 0; font-family: 'IBM Plex Mono', monospace; border: 1px solid #22d3ee33; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🧮 Unidad 1: Álgebra de Boole y Compuertas Lógicas</h1>
+  <p style="color: #22d3ee; font-weight: 600;">La base de todo circuito digital: contar en binario, operar con lógica y simplificar expresiones</p>
+
+  <div class="section">
+    <h2>📹 Video Tutorial: Introducción a la Electrónica Digital</h2>
+    <p>Comienza aquí antes de avanzar en la unidad:</p>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/VwOkqM4j-ts" title="Introducción a la Electrónica Digital" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>1️⃣ Sistemas de Numeración y Conversiones</h2>
+    <p>Los circuitos digitales trabajan con dos únicos estados (0 y 1), por lo que el sistema binario es la base de toda la electrónica digital. También se usan los sistemas octal y hexadecimal como formas compactas de representar valores binarios.</p>
+    <h3>Sistemas más usados:</h3>
+    <ul class="lista">
+      <li><strong>Binario (base 2):</strong> dígitos 0 y 1. Ej: 1011₂</li>
+      <li><strong>Decimal (base 10):</strong> dígitos 0-9. Ej: 11₁₀</li>
+      <li><strong>Octal (base 8):</strong> dígitos 0-7. Ej: 13₈</li>
+      <li><strong>Hexadecimal (base 16):</strong> dígitos 0-9 y A-F. Ej: B₁₆</li>
+    </ul>
+    <h3>Conversión binario → decimal</h3>
+    <div class="formulas">
+      <p>1011₂ = (1×2³) + (0×2²) + (1×2¹) + (1×2⁰) = 8 + 0 + 2 + 1 = 11₁₀</p>
+    </div>
+    <h3>Tabla de equivalencias (0-15)</h3>
+    <table>
+      <tr><th>Decimal</th><th>Binario</th><th>Octal</th><th>Hexadecimal</th></tr>
+      <tr><td>0</td><td>0000</td><td>0</td><td>0</td></tr>
+      <tr><td>5</td><td>0101</td><td>5</td><td>5</td></tr>
+      <tr><td>10</td><td>1010</td><td>12</td><td>A</td></tr>
+      <tr><td>15</td><td>1111</td><td>17</td><td>F</td></tr>
+    </table>
+    <div class="actividad">
+      <h3>✏️ Actividad 1: Conversión de bases</h3>
+      <p><strong>Ejercicio:</strong> Convierte a mano los siguientes valores y verifica el resultado con una calculadora científica en modo programador:</p>
+      <ul class="lista">
+        <li>27₁₀ → binario</li>
+        <li>110101₂ → decimal</li>
+        <li>2F₁₆ → decimal y binario</li>
+        <li>45₈ → binario</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ Compuertas Básicas y Tablas de Verdad</h2>
+    <p>Una compuerta lógica es un circuito que aplica una operación booleana a una o más entradas binarias para producir una única salida.</p>
+    <h3>Compuertas fundamentales</h3>
+    <table>
+      <tr><th>Compuerta</th><th>Símbolo</th><th>Operación</th><th>Salida = 1 cuando...</th></tr>
+      <tr><td>AND</td><td>A·B</td><td>Producto lógico</td><td>todas las entradas son 1</td></tr>
+      <tr><td>OR</td><td>A+B</td><td>Suma lógica</td><td>al menos una entrada es 1</td></tr>
+      <tr><td>NOT</td><td>A'</td><td>Negación</td><td>la entrada es 0</td></tr>
+      <tr><td>NAND</td><td>(A·B)'</td><td>AND negada</td><td>no todas las entradas son 1</td></tr>
+      <tr><td>NOR</td><td>(A+B)'</td><td>OR negada</td><td>ninguna entrada es 1</td></tr>
+      <tr><td>XOR</td><td>A⊕B</td><td>OR exclusiva</td><td>las entradas son distintas</td></tr>
+    </table>
+    <h3>Tabla de verdad: AND, OR y XOR (2 entradas)</h3>
+    <table>
+      <tr><th>A</th><th>B</th><th>AND</th><th>OR</th><th>XOR</th></tr>
+      <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+      <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+      <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+    </table>
+    <div class="actividad">
+      <h3>✏️ Actividad 2: Simulación de compuertas</h3>
+      <p><strong>Ejercicio:</strong> Arma cada compuerta en Logic Drawer y confirma su tabla de verdad:</p>
+      <a href="https://logicdrawer.app/logic/" class="btn-link" target="_blank">🎨 Abrir Logic Drawer</a>
+      <ul class="lista" style="margin-top: 15px;">
+        <li>Construye AND, OR y NOT con 2 entradas</li>
+        <li>Construye NAND y NOR combinando compuertas básicas</li>
+        <li>Prueba las 4 combinaciones posibles de entrada</li>
+        <li>Captura pantalla de cada circuito funcionando</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ Álgebra de Boole: Teoremas y Simplificación</h2>
+    <p>El álgebra de Boole permite simplificar expresiones lógicas antes de construir el circuito, usando menos compuertas y reduciendo costos.</p>
+    <h3>Teoremas y leyes principales</h3>
+    <div class="teorema"><span>Identidad</span><span>A + 0 = A &nbsp;&nbsp;|&nbsp;&nbsp; A · 1 = A</span></div>
+    <div class="teorema"><span>Nulo</span><span>A + 1 = 1 &nbsp;&nbsp;|&nbsp;&nbsp; A · 0 = 0</span></div>
+    <div class="teorema"><span>Idempotencia</span><span>A + A = A &nbsp;&nbsp;|&nbsp;&nbsp; A · A = A</span></div>
+    <div class="teorema"><span>Complemento</span><span>A + A' = 1 &nbsp;&nbsp;|&nbsp;&nbsp; A · A' = 0</span></div>
+    <div class="teorema"><span>Doble negación</span><span>(A')' = A</span></div>
+    <div class="teorema"><span>Ley de Morgan</span><span>(A·B)' = A' + B' &nbsp;&nbsp;|&nbsp;&nbsp; (A+B)' = A'·B'</span></div>
+    <div class="teorema"><span>Distributiva</span><span>A·(B+C) = A·B + A·C</span></div>
+    <div class="teorema"><span>Absorción</span><span>A + (A·B) = A</span></div>
+    <h3>Ejemplo de simplificación</h3>
+    <div class="formulas">
+      <p>F = A·B + A·B' + A'·B<br/>
+      = A·(B+B') + A'·B &nbsp;&nbsp;(distributiva)<br/>
+      = A·1 + A'·B &nbsp;&nbsp;(complemento)<br/>
+      = A + A'·B &nbsp;&nbsp;(identidad)<br/>
+      = A + B &nbsp;&nbsp;(absorción extendida)</p>
+    </div>
+    <div class="actividad">
+      <h3>✏️ Actividad 3: Simplificación algebraica</h3>
+      <p><strong>Ejercicio:</strong> Simplifica paso a paso, indicando qué teorema aplicas en cada línea:</p>
+      <ul class="lista">
+        <li>F = A·B + A·B'</li>
+        <li>F = (A + B)·(A + B')</li>
+        <li>F = A + A'·B + A'·B'</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ Mapas de Karnaugh (2, 3 y 4 variables)</h2>
+    <p>El mapa de Karnaugh es un método gráfico para simplificar expresiones booleanas agrupando los unos (minterms) en bloques de 1, 2, 4 u 8 celdas adyacentes.</p>
+    <h3>Ejemplo: Mapa K de 2 variables</h3>
+    <div class="karnaugh">
+      <table>
+        <tr><th></th><th>B=0</th><th>B=1</th></tr>
+        <tr><th>A=0</th><td>0</td><td>1</td></tr>
+        <tr><th>A=1</th><td>1</td><td>1</td></tr>
+      </table>
+    </div>
+    <p>Agrupando las celdas en 1 se obtiene la expresión mínima: <strong>F = A + B</strong></p>
+    <h3>Reglas de agrupación</h3>
+    <ul class="lista">
+      <li>Los grupos deben tener tamaño potencia de 2 (1, 2, 4, 8...)</li>
+      <li>Cuanto más grande el grupo, más simple el término resultante</li>
+      <li>Las celdas se pueden compartir entre varios grupos</li>
+      <li>El mapa "envuelve" en los bordes (la última columna es adyacente a la primera)</li>
+    </ul>
+    <div class="actividad">
+      <h3>✏️ Actividad 4: Simplificación con Karnaugh</h3>
+      <p><strong>Ejercicio:</strong> Dibuja el mapa de Karnaugh y obtén la expresión mínima para:</p>
+      <ul class="lista">
+        <li>F(A,B,C) = Σ(1,3,5,7) — 3 variables</li>
+        <li>F(A,B,C,D) = Σ(0,2,8,10) — 4 variables</li>
+      </ul>
+      <p>Verifica tu resultado construyendo el circuito simplificado en Logic Drawer y comparando su tabla de verdad con la original.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📚 Resumen de la Unidad 1</h2>
+    <ul class="lista">
+      <li>✅ Convertiste valores entre binario, decimal, octal y hexadecimal</li>
+      <li>✅ Identificaste el comportamiento de las compuertas básicas</li>
+      <li>✅ Aplicaste teoremas del álgebra de Boole para simplificar expresiones</li>
+      <li>✅ Simplificaste expresiones lógicas usando mapas de Karnaugh</li>
+      <li>✅ Verificaste tus circuitos simplificados en un simulador</li>
+    </ul>
+  </div>
+
+  <div style="text-align: center; margin: 40px 0; padding: 20px; background: #123a44; border-radius: 8px;">
+    <p style="color: #22d3ee; font-size: 18px; font-weight: 600;">Unidad 1 completada ✅</p>
+    <p>Continúa con la <a href="unidad2.html" style="color:#fbbf24;">Unidad 2: Circuitos Combinacionales</a></p>
+  </div>
+</div>
+</body>
+</html>
