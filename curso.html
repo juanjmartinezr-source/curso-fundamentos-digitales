@@ -73,16 +73,17 @@
           <li><strong>Unidad 3 — Circuitos Secuenciales:</strong> Conocerás flip-flops y contadores básicos para diseñar sistemas secuenciales.</li>
         </ol>
         <p>En este módulo vas a: descargar una guía de referencia, ver un video sobre conceptos fundamentales, participar en el foro, entregar una tarea práctica y presentar un cuestionario fina[...]</p>
-        <button class="btn btn-primario" data-ir="documento">Continuar →</button>
+        <button class="btn btn-primario" data-ir="unidad1">Continuar →</button>
       </div>
     </section>
 
-    <!-- PASO 3: Documento -->
-    <section id="paso-documento" class="paso">
+    <!-- PASO 3: Unidad 1 -->
+    <section id="paso-unidad1" class="paso" data-unidad="1">
       <div class="tarjeta">
-        <p class="etiqueta-modulo">Material de lectura</p>
-        <h3>Guía: Fundamentos de Electrónica Digital</h3>
-        <p>Descarga esta guía en PDF con lo esencial sobre sistemas de numeración, compuertas lógicas y el álgebra de Boole.</p>
+        <p class="etiqueta-modulo">Unidad 1</p>
+        <h3>Álgebra de Boole y Compuertas Lógicas</h3>
+        <p>Sistemas de numeración, compuertas básicas, teoremas de Boole y mapas de Karnaugh. Revisa el material y luego desarrolla la actividad práctica.</p>
+
         <div class="descarga-caja">
           <div class="descarga-icono" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
@@ -93,32 +94,112 @@
             <p class="descarga-nombre">guia-tablero-y-fase-neutro.pdf</p>
             <p class="descarga-detalle">PDF · Guía de referencia</p>
           </div>
-          <a id="link-descarga" href="guia-tablero-y-fase-neutro.pdf" download class="btn btn-secundario">Descargar</a>
+          <a href="guia-tablero-y-fase-neutro.pdf" download class="btn btn-secundario">Descargar documento</a>
         </div>
-        <p id="descarga-confirmacion" class="confirmacion" hidden>✓ Documento descargado. Ya puedes continuar.</p>
-        <button class="btn btn-primario" id="btn-continuar-documento" data-ir="video" disabled>Continuar →</button>
-      </div>
-    </section>
 
-    <!-- PASO 4: Video -->
-    <section id="paso-video" class="paso">
-      <div class="tarjeta">
-        <p class="etiqueta-modulo">Video de la clase</p>
-        <h3>Introducción a la Electrónica Digital</h3>
+        <p class="etiqueta-modulo" style="margin-top:20px;">O mira el video tutorial</p>
         <div class="video-envoltorio">
-          <iframe id="video-frame" src="https://youtu.be/VwOkqM4j-ts?si=gkLB6X1ZTlBgm-gP" title="Video del curso" frameborder="0"
+          <iframe class="video-frame-unidad" title="Video Unidad 1" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         </div>
-        <p id="video-confirmacion" class="confirmacion" hidden>✓ Video marcado como visto.</p>
-        <div class="fila-botones">
-          <button class="btn btn-secundario" id="btn-marcar-video">Marcar video como visto</button>
-          <button class="btn btn-primario" id="btn-continuar-video" data-ir="foro" disabled>Continuar →</button>
-        </div>
+
+        <hr style="margin:24px 0; border:none; border-top:1px solid var(--line);">
+
+        <h3>Actividad práctica</h3>
+        <p>Abre la Unidad 1 completa para desarrollar la actividad con Logic Drawer:</p>
+        <a href="unidad1.html" target="_blank" class="btn btn-primario">Abrir Unidad 1 y actividad ↗</a>
+
+        <label style="display:flex; align-items:center; gap:8px; margin-top:16px; font-size:14px;">
+          <input type="checkbox" class="check-actividad-unidad">
+          He completado la actividad de la Unidad 1
+        </label>
+
+        <button class="btn btn-primario btn-continuar-unidad" data-ir="unidad2" disabled>Continuar a Unidad 2 →</button>
       </div>
     </section>
 
-    <!-- PASO 5: Foro -->
+    <!-- PASO 4: Unidad 2 -->
+    <section id="paso-unidad2" class="paso" data-unidad="2">
+      <div class="tarjeta">
+        <p class="etiqueta-modulo">Unidad 2</p>
+        <h3>Circuitos Combinacionales</h3>
+        <p>Multiplexores, decodificadores y sumador completo. Revisa el material y luego desarrolla la actividad práctica.</p>
+
+        <div class="descarga-caja">
+          <div class="descarga-icono" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/>
+            </svg>
+          </div>
+          <div class="descarga-info">
+            <p class="descarga-nombre">guia-tablero-y-fase-neutro.pdf</p>
+            <p class="descarga-detalle">PDF · Guía de referencia</p>
+          </div>
+          <a href="guia-tablero-y-fase-neutro.pdf" download class="btn btn-secundario">Descargar documento</a>
+        </div>
+
+        <p class="etiqueta-modulo" style="margin-top:20px;">O mira el video tutorial</p>
+        <div class="video-envoltorio">
+          <iframe class="video-frame-unidad" title="Video Unidad 2" frameborder="0" allow="autoplay"></iframe>
+        </div>
+
+        <hr style="margin:24px 0; border:none; border-top:1px solid var(--line);">
+
+        <h3>Actividad práctica</h3>
+        <p>Abre la Unidad 2 completa para desarrollar la actividad con Logic Drawer:</p>
+        <a href="unidad2.html" target="_blank" class="btn btn-primario">Abrir Unidad 2 y actividad ↗</a>
+
+        <label style="display:flex; align-items:center; gap:8px; margin-top:16px; font-size:14px;">
+          <input type="checkbox" class="check-actividad-unidad">
+          He completado la actividad de la Unidad 2
+        </label>
+
+        <button class="btn btn-primario btn-continuar-unidad" data-ir="unidad3" disabled>Continuar a Unidad 3 →</button>
+      </div>
+    </section>
+
+    <!-- PASO 5: Unidad 3 -->
+    <section id="paso-unidad3" class="paso" data-unidad="3">
+      <div class="tarjeta">
+        <p class="etiqueta-modulo">Unidad 3</p>
+        <h3>Circuitos Secuenciales</h3>
+        <p>Flip-flops D y JK y contadores básicos. Revisa el material y luego desarrolla la última actividad práctica del curso.</p>
+
+        <div class="descarga-caja">
+          <div class="descarga-icono" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/>
+            </svg>
+          </div>
+          <div class="descarga-info">
+            <p class="descarga-nombre">guia-tablero-y-fase-neutro.pdf</p>
+            <p class="descarga-detalle">PDF · Guía de referencia</p>
+          </div>
+          <a href="guia-tablero-y-fase-neutro.pdf" download class="btn btn-secundario">Descargar documento</a>
+        </div>
+
+        <p class="etiqueta-modulo" style="margin-top:20px;">O mira el video tutorial</p>
+        <div class="video-envoltorio">
+          <iframe class="video-frame-unidad" title="Video Unidad 3" frameborder="0" allow="autoplay"></iframe>
+        </div>
+
+        <hr style="margin:24px 0; border:none; border-top:1px solid var(--line);">
+
+        <h3>Actividad práctica</h3>
+        <p>Abre la Unidad 3 completa para desarrollar la última actividad del curso:</p>
+        <a href="unidad3.html" target="_blank" class="btn btn-primario">Abrir Unidad 3 y actividad ↗</a>
+
+        <label style="display:flex; align-items:center; gap:8px; margin-top:16px; font-size:14px;">
+          <input type="checkbox" class="check-actividad-unidad">
+          He completado la actividad de la Unidad 3
+        </label>
+
+        <button class="btn btn-primario btn-continuar-unidad" data-ir="foro" disabled>Continuar al foro →</button>
+      </div>
+    </section>
+
+    <!-- PASO 6: Foro -->
     <section id="paso-foro" class="paso">
       <div class="tarjeta">
         <p class="etiqueta-modulo">Foro de discusión</p>
@@ -136,45 +217,35 @@
       </div>
     </section>
 
-    <!-- PASO 6: Tarea -->
+    <!-- PASO 7: Entrega de actividades (Unidad 1 a 3) -->
     <section id="paso-tarea" class="paso">
       <div class="tarjeta">
-        <p class="etiqueta-modulo">Tarea</p>
-        <h3>Diseña una tabla de verdad simple</h3>
-        <p>Elige una compuerta lógica básica (AND, OR, NOT, NAND, NOR) y crea su tabla de verdad. Usa la siguiente estructura:</p>
-        <p class="formula">Inputs → Outputs (base 2)</p>
+        <p class="etiqueta-modulo">Entrega de actividades</p>
+        <h3>Entrega de actividades — Unidades 1 a 3</h3>
+        <p>Resume brevemente qué desarrollaste en cada actividad práctica. Puedes pegar un enlace a tu captura, repositorio o documento como evidencia.</p>
 
         <form id="form-tarea" class="tarea-form">
-          <label for="tarea-aparato">Compuerta elegida</label>
-          <input id="tarea-aparato" type="text" placeholder="Ej: AND, OR, NOT, NAND, NOR..." required>
+          <label for="tarea-unidad1">Actividad Unidad 1 — Álgebra de Boole y Compuertas Lógicas</label>
+          <textarea id="tarea-unidad1" rows="2" placeholder="Describe tu actividad o pega el enlace de tu evidencia..." required></textarea>
 
-          <div class="tarea-grid">
-            <div>
-              <label for="tarea-potencia">Número de entradas</label>
-              <input id="tarea-potencia" type="number" min="1" max="4" placeholder="Ej: 2" required>
-            </div>
-            <div>
-              <label for="tarea-horas">Número de filas en tabla</label>
-              <input id="tarea-horas" type="number" min="2" step="1" placeholder="Ej: 4" required>
-            </div>
-          </div>
+          <label for="tarea-unidad2">Actividad Unidad 2 — Circuitos Combinacionales</label>
+          <textarea id="tarea-unidad2" rows="2" placeholder="Describe tu actividad o pega el enlace de tu evidencia..." required></textarea>
 
-          <div class="tarea-resultado" id="tarea-resultado">
-            Resultado: <strong id="tarea-resultado-valor">— filas</strong>
-          </div>
+          <label for="tarea-unidad3">Actividad Unidad 3 — Circuitos Secuenciales</label>
+          <textarea id="tarea-unidad3" rows="2" placeholder="Describe tu actividad o pega el enlace de tu evidencia..." required></textarea>
 
           <label for="tarea-comentario">Comentario para el instructor (opcional)</label>
-          <textarea id="tarea-comentario" rows="2" placeholder="Notas sobre tu tabla de verdad..."></textarea>
+          <textarea id="tarea-comentario" rows="2" placeholder="Notas adicionales..."></textarea>
 
-          <button type="submit" class="btn btn-primario btn-ancho">Entregar tarea</button>
+          <button type="submit" class="btn btn-primario btn-ancho">Entregar actividades</button>
         </form>
 
-        <p id="tarea-confirmacion" class="confirmacion" hidden>✓ Tarea entregada correctamente.</p>
+        <p id="tarea-confirmacion" class="confirmacion" hidden>✓ Actividades entregadas correctamente.</p>
         <button class="btn btn-primario" data-ir="cuestionario" id="btn-continuar-tarea" disabled>Continuar →</button>
       </div>
     </section>
 
-    <!-- PASO 7: Cuestionario -->
+    <!-- PASO 8: Cuestionario -->
     <section id="paso-cuestionario" class="paso">
       <div class="tarjeta">
         <p class="etiqueta-modulo">Cuestionario final</p>
@@ -185,7 +256,7 @@
       </div>
     </section>
 
-    <!-- PASO 8: Calificación -->
+    <!-- PASO 9: Calificación -->
     <section id="paso-calificacion" class="paso">
       <div class="tarjeta calificacion-tarjeta">
         <p class="etiqueta-modulo">Calificación final</p>
