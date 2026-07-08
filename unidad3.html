@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 3 - Circuitos Secuenciales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0e27;
+    color: #e4e4e7;
+    padding: 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { color: #f472b6; margin: 30px 0 20px 0; }
+  h2 { color: #60a5fa; margin: 25px 0 15px 0; }
+  h3 { color: #fbbf24; margin: 15px 0 10px 0; }
+  p { line-height: 1.6; margin-bottom: 10px; }
+  .section { background: #1a1f3a; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #f472b6; }
+  .actividad { background: #2d3748; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #60a5fa; }
+  .video-container { margin: 20px 0; }
+  iframe { width: 100%; height: 500px; border-radius: 8px; border: 2px solid #f472b6; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; background: #0a0e27; }
+  th, td { padding: 12px; text-align: center; border: 1px solid #404854; }
+  th { background: #3a1f3a; color: #f472b6; font-weight: 600; }
+  .btn-link { display: inline-block; background: #f472b6; color: #0a0e27; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 10px 0; transition: background 0.3s; }
+  .btn-link:hover { background: #ec4899; }
+  .formulas { background: #2a3f5f; padding: 15px; border-radius: 6px; margin: 10px 0; font-family: 'IBM Plex Mono', monospace; }
+  .lista { margin-left: 20px; }
+  .lista li { margin: 8px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>⚡ Unidad 3: Introducción a Circuitos Secuenciales</h1>
+  <p style="color: #f472b6; font-weight: 600;">Fundamentos para entender sistemas con memoria y control</p>
+  <div class="section">
+    <h2>📹 Video Tutorial: Introducción a Electrónica Digital</h2>
+    <p>Completa tu aprendizaje con este video fundamental:</p>
+    <div class="video-container">
+      <iframe src="https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/preview" frameborder="0" allow="autoplay"></iframe>
+    </div>
+  </div>
+  <div class="section">
+    <h2>📌 ¿Qué son los Circuitos Secuenciales?</h2>
+    <p>A diferencia de los circuitos combinacionales, los circuitos secuenciales tienen <strong>memoria</strong>. Su salida depende no solo de las entradas actuales, sino también del estado anterior.</p>
+    <h3>Características principales:</h3>
+    <ul class="lista">
+      <li><strong>Tienen elementos de almacenamiento:</strong> capacidad de recordar estados anteriores</li>
+      <li><strong>Dependen del tiempo:</strong> requieren una señal de reloj (clock)</li>
+      <li><strong>Aplicaciones:</strong> contadores, registros de desplazamiento, máquinas de estado, memorias</li>
+      <li><strong>Componentes básicos:</strong> flip-flops y compuertas lógicas</li>
+    </ul>
+  </div>
+  <div class="section">
+    <h2>1️⃣ Flip-Flop D (Data/Delay)</h2>
+    <p>El flip-flop D es uno de los elementos de almacenamiento más básicos. Captura y retiene el valor de entrada (D) en los flancos del reloj.</p>
+    <h3>Características:</h3>
+    <ul class="lista">
+      <li><strong>Entrada D:</strong> el dato a almacenar</li>
+      <li><strong>Entrada Clock (CLK):</strong> controla cuándo se captura D</li>
+      <li><strong>Salidas Q y Q':</strong> Q es el estado almacenado, Q' es el inverso</li>
+      <li><strong>Sensibilidad:</strong> puede ser al flanco ascendente o descendente del reloj</li>
+    </ul>
+    <h3>Comportamiento:</h3>
+    <ul class="lista">
+      <li><strong>Cuando CLK sube (flanco ascendente):</strong> Q toma el valor de D</li>
+      <li><strong>Cuando CLK baja:</strong> Q mantiene el valor anterior (estado)</li>
+      <li><strong>Q' siempre es lo opuesto a Q</strong></li>
+    </ul>
+    <div class="actividad">
+      <h3>✏️ Actividad 1: Flip-Flop D</h3>
+      <p><strong>Ejercicio:</strong> Construye un flip-flop D en Logic Drawer:</p>
+      <a href="https://logicdrawer.app/logic/" class="btn-link" target="_blank">🎨 Abrir Logic Drawer</a>
+      <ul class="lista" style="margin-top: 15px;">
+        <li>Implementa un flip-flop D usando compuertas NAND cruzadas</li>
+        <li>O busca un componente de flip-flop D preimplementado</li>
+        <li>Conecta una entrada de datos (D) y un reloj (CLK)</li>
+        <li>Observa cómo Q captura D en cada flanco de reloj</li>
+        <li>Captura el comportamiento en diferentes tiempos</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <h2>2️⃣ Flip-Flop JK</h2>
+    <p>El flip-flop JK es más versátil que el flip-flop D. Tiene dos entradas de control (J y K) que determinan el comportamiento del flip-flop.</p>
+    <h3>Comportamiento:</h3>
+    <ul class="lista">
+      <li><strong>J=0, K=0:</strong> No cambia (mantiene el estado)</li>
+      <li><strong>J=0, K=1:</strong> Q = 0 (reset)</li>
+      <li><strong>J=1, K=0:</strong> Q = 1 (set)</li>
+      <li><strong>J=1, K=1:</strong> Q conmuta (cambia al estado opuesto)</li>
+    </ul>
+    <h3>Tabla de verdad del Flip-Flop JK:</h3>
+    <table>
+      <tr><th>J</th><th>K</th><th>CLK</th><th>Q (siguiente)</th><th>Operación</th></tr>
+      <tr><td>0</td><td>0</td><td>↑</td><td>Qi</td><td>No cambia</td></tr>
+      <tr><td>0</td><td>1</td><td>↑</td><td>0</td><td>Reset</td></tr>
+      <tr><td>1</td><td>0</td><td>↑</td><td>1</td><td>Set</td></tr>
+      <tr><td>1</td><td>1</td><td>↑</td><td>Qi'</td><td>Toggle/Conmuta</td></tr>
+    </table>
+    <div class="actividad">
+      <h3>✏️ Actividad 2: Flip-Flop JK</h3>
+      <p><strong>Ejercicio:</strong> Construye un flip-flop JK en Logic Drawer:</p>
+      <ul class="lista">
+        <li>Implementa un flip-flop JK con entradas J, K y CLK</li>
+        <li>Prueba todos los 4 modos de operación</li>
+        <li>Captura los resultados en cada caso</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <h2>3️⃣ Contadores Básicos</h2>
+    <p>Un contador es un circuito secuencial que cuenta pulsos de reloj. Los contadores se construyen conectando flip-flops en cascada.</p>
+    <h3>Contador de 2 bits (módulo 4):</h3>
+    <p>Cuenta: 00 → 01 → 10 → 11 → 00 (se repite)</p>
+    <table>
+      <tr><th>Pulso</th><th>Q1 Q0</th><th>Valor Decimal</th></tr>
+      <tr><td>0</td><td>0 0</td><td>0</td></tr>
+      <tr><td>1</td><td>0 1</td><td>1</td></tr>
+      <tr><td>2</td><td>1 0</td><td>2</td></tr>
+      <tr><td>3</td><td>1 1</td><td>3</td></tr>
+      <tr><td>4</td><td>0 0</td><td>0 (reinicia)</td></tr>
+    </table>
+    <div class="actividad">
+      <h3>✏️ Actividad 3: Contador de 2 bits</h3>
+      <p><strong>Ejercicio:</strong> Construye un contador ascendente de 2 bits usando flip-flops JK:</p>
+      <ul class="lista">
+        <li>Conecta 2 flip-flops JK en cascada</li>
+        <li>Fija J=1 y K=1 en ambos flip-flops (modo toggle)</li>
+        <li>Conecta el reloj al primer flip-flop</li>
+        <li>Conecta Q0 como entrada de reloj del segundo flip-flop</li>
+        <li>Aplica 4 pulsos de reloj y observa el conteo</li>
+        <li>Verifica la secuencia: 00 → 01 → 10 → 11 → 00</li>
+      </ul>
+    </div>
+    <div class="actividad">
+      <h3>✏️ Actividad 4: Contador de 4 bits</h3>
+      <p><strong>Ejercicio Avanzado:</strong> Construye un contador de 4 bits (0-15):</p>
+      <ul class="lista">
+        <li>Usa 4 flip-flops JK</li>
+        <li>Conecta cada salida Q al reloj del siguiente</li>
+        <li>Aplica al menos 8 pulsos de reloj</li>
+        <li>Anota la salida en cada pulso</li>
+        <li>Verifica que cuente correctamente hasta 15 (1111)</li>
+        <li>¿Se reinicia en 0 después del pulso 16?</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section">
+    <h2>📚 Resumen de la Unidad 3</h2>
+    <ul class="lista">
+      <li>✅ Entendiste la diferencia entre circuitos combinacionales y secuenciales</li>
+      <li>✅ Dominaste el funcionamiento del flip-flop D</li>
+      <li>✅ Aprendiste el flip-flop JK y sus 4 modos de operación</li>
+      <li>✅ Construiste contadores binarios de 2 y 4 bits</li>
+      <li>✅ Diseñaste sistemas secuenciales completos en Logic Drawer</li>
+    </ul>
+  </div>
+  <div style="text-align: center; margin: 40px 0; padding: 30px; background: #3a1f3a; border-radius: 8px;">
+    <p style="color: #f472b6; font-size: 24px; font-weight: 600;">¡CURSO COMPLETADO! 🎉</p>
+    <p style="font-size: 16px; margin-top: 10px;">Has dominado los Fundamentos Digitales</p>
+  </div>
+</div>
+</body>
+</html>
