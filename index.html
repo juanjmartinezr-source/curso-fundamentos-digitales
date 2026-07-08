@@ -3,11 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electricidad Básica para el Hogar · Acceso</title>
+<title>Fundamentos Digitales · Acceso</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .enlace-remoto {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--surface-alt);
+    border-radius: 8px;
+    border-left: 4px solid var(--safety-yellow);
+  }
+  .enlace-remoto-titulo {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .enlace-remoto-url {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: var(--surface);
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    word-break: break-all;
+  }
+  .enlace-remoto-url code {
+    flex: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .enlace-remoto-boton {
+    padding: 6px 12px;
+    background: var(--safety-yellow);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    transition: background 0.2s;
+  }
+  .enlace-remoto-boton:hover {
+    background: #e8b800;
+  }
+  .enlace-remoto-boton.copiado {
+    background: #1E8449;
+    color: white;
+  }
+</style>
 </head>
 <body>
 
@@ -17,12 +66,12 @@
     <div class="login-marca">
       <div class="marca-icono" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="40" height="40">
-          <path d="M26 2 L10 26 H21 L18 46 L38 18 H26 Z" fill="var(--safety-yellow)"/>
+          <path d="M24 4 L8 20 L16 20 L12 40 L36 24 L28 24 L32 4 Z" fill="var(--safety-yellow)"/>
         </svg>
       </div>
       <p class="marca-eyebrow">SIMULACIÓN DE AULA VIRTUAL</p>
-      <h1 class="marca-titulo">Electricidad Básica<br>para el Hogar</h1>
-      <p class="marca-sub">Identifica el tablero, entiende fase y neutro, y aprende a hacer instalaciones simples de forma segura.</p>
+      <h1 class="marca-titulo">Fundamentos Digitales</h1>
+      <p class="marca-sub">Aprende álgebra de Boole, compuertas lógicas, circuitos combinacionales y secuenciales.</p>
     </div>
 
     <form id="form-login" class="login-caja" autocomplete="off">
@@ -36,9 +85,37 @@
       <button type="submit" class="btn btn-primario btn-ancho">Ingresar al curso →</button>
       <p id="login-error" class="login-error" hidden>Usuario o contraseña incorrectos.</p>
     </form>
+
+    <!-- Enlace remoto para visualización -->
+    <div class="enlace-remoto">
+      <p class="enlace-remoto-titulo">📡 Acceso remoto (vista previa)</p>
+      <div class="enlace-remoto-url">
+        <code id="enlace-remoto-url">https://juanjmartinezr-source.github.io/curso-fundamentos-digitales/curso.html</code>
+        <button type="button" class="enlace-remoto-boton" id="btn-copiar-enlace">Copiar</button>
+      </div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">Usa este enlace para acceder al curso desde cualquier dispositivo.</p>
+    </div>
   </div>
 </section>
 
 <script src="script-login.js"></script>
+<script>
+  // Funcionalidad para copiar enlace remoto
+  document.getElementById("btn-copiar-enlace").addEventListener("click", function() {
+    const enlace = document.getElementById("enlace-remoto-url").textContent;
+    navigator.clipboard.writeText(enlace).then(() => {
+      const btn = this;
+      btn.textContent = "✓ Copiado";
+      btn.classList.add("copiado");
+      setTimeout(() => {
+        btn.textContent = "Copiar";
+        btn.classList.remove("copiado");
+      }, 2000);
+    }).catch(err => {
+      console.error("Error al copiar:", err);
+      alert("No se pudo copiar el enlace");
+    });
+  });
+</script>
 </body>
 </html>
