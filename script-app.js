@@ -19,19 +19,25 @@ const TEMAS = [
   "Contadores básicos"
 ];
 
-// Los 8 pasos del recorrido solicitado
+// Los 9 pasos del recorrido: curso -> anuncio -> unidad 1 -> unidad 2 -> unidad 3 -> foro -> entrega -> cuestionario -> calificación
 const PASOS = [
   { id: "curso",         nombre: "Ingresar al curso" },
   { id: "anuncio",       nombre: "Leer el anuncio inicial" },
-  { id: "documento",     nombre: "Descargar un documento" },
-  { id: "video",         nombre: "Ver un video" },
-  { id: "foro",          nombre: "Participar en un foro" },
-  { id: "tarea",         nombre: "Entregar una tarea" },
-  { id: "cuestionario",  nombre: "Presentar un cuestionario" },
+  { id: "unidad1",       nombre: "Unidad 1: Álgebra de Boole" },
+  { id: "unidad2",       nombre: "Unidad 2: Circuitos Combinacionales" },
+  { id: "unidad3",       nombre: "Unidad 3: Circuitos Secuenciales" },
+  { id: "foro",          nombre: "Participar en el foro" },
+  { id: "tarea",         nombre: "Entregar actividades (Unidades 1-3)" },
+  { id: "cuestionario",  nombre: "Presentar el cuestionario" },
   { id: "calificacion",  nombre: "Revisar la calificación" }
 ];
 
-const VIDEO_ID = "VwOkqM4j-ts"; // Tablero eléctrico domiciliario explicado
+// Video tutorial de cada unidad (se carga de forma perezosa al entrar al paso)
+const VIDEOS_UNIDAD = {
+  unidad1: "https://www.youtube.com/embed/VwOkqM4j-ts",
+  unidad2: "https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/preview",
+  unidad3: "https://drive.google.com/file/d/1iUv4MjYhX2EYyBI7qLRtF0wE7pY8Gf80/preview"
+};
 
 const PREGUNTAS = [
   {
@@ -169,6 +175,7 @@ function iniciarApp(usuario){
 
   construirListaTemas();
   construirSwitches();
+  construirPasosUnidad();
   construirQuiz();
   renderForo();
   restaurarTarea();
@@ -279,7 +286,7 @@ function irAPaso(id){
     f.classList.toggle("activo", f.dataset.paso === id)
   );
 
-  if (id === "video") cargarVideo();
+  if (id.startsWith("unidad")) cargarVideoUnidad(id);
   if (id === "cuestionario") { /* ya construido */ }
   if (id === "calificacion") mostrarCalificacion();
 
@@ -299,31 +306,38 @@ document.querySelectorAll("[data-ir]").forEach(btn => {
 });
 
 /* =========================================================
-   PASO 3: DOCUMENTO
+   PASOS 3-5: UNIDADES 1, 2 y 3 (material + actividad)
+   Cada unidad tiene: descarga de documento, video tutorial
+   (carga perezosa), enlace a la actividad y un checkbox que
+   habilita el botón "Continuar" al marcarla como completada.
 ========================================================= */
-document.getElementById("link-descarga").addEventListener("click", () => {
-  document.getElementById("descarga-confirmacion").hidden = false;
-  document.getElementById("btn-continuar-documento").disabled = false;
-  marcarPasoCompleto("documento");
-});
-
-/* =========================================================
-   PASO 4: VIDEO
-========================================================= */
-function cargarVideo(){
-  const frame = document.getElementById("video-frame");
-  if (!frame.src) {
-    frame.src = `https://www.youtube.com/embed/${VIDEO_ID}`;
+function cargarVideoUnidad(id){
+  const frame = document.querySelector(`#paso-${id} .video-frame-unidad`);
+  if (frame && !frame.src && VIDEOS_UNIDAD[id]) {
+    frame.src = VIDEOS_UNIDAD[id];
   }
 }
-document.getElementById("btn-marcar-video").addEventListener("click", () => {
-  document.getElementById("video-confirmacion").hidden = false;
-  document.getElementById("btn-continuar-video").disabled = false;
-  marcarPasoCompleto("video");
-});
+
+function construirPasosUnidad(){
+  const progreso = cargarProgreso(usuarioActual);
+  document.querySelectorAll("[data-unidad]").forEach(seccion => {
+    const id = seccion.id.replace("paso-", "");
+    const check = seccion.querySelector(".check-actividad-unidad");
+    const btnContinuar = seccion.querySelector(".btn-continuar-unidad");
+    if (!check || !btnContinuar) return;
+
+    // Restaurar estado si la unidad ya fue marcada como completada antes
+    check.checked = !!progreso[id];
+    btnContinuar.disabled = !check.checked;
+
+    check.addEventListener("change", () => {
+      btnContinuar.disabled = !check.checked;
+    });
+  });
+}
 
 /* =========================================================
-   PASO 5: FORO
+   PASO 6: FORO
 ========================================================= */
 function renderForo(){
   const cont = document.getElementById("foro-lista");
@@ -373,34 +387,16 @@ document.getElementById("form-foro").addEventListener("submit", (e) => {
 });
 
 /* =========================================================
-   PASO 6: TAREA
+   PASO 7: ENTREGA DE ACTIVIDADES (Unidades 1 a 3)
 ========================================================= */
-const potenciaInput = document.getElementById("tarea-potencia");
-const horasInput = document.getElementById("tarea-horas");
-const resultadoValor = document.getElementById("tarea-resultado-valor");
-
-function calcularConsumo(){
-  const p = parseFloat(potenciaInput.value);
-  const h = parseFloat(horasInput.value);
-  if (!isNaN(p) && !isNaN(h)) {
-    const kwh = (p * h) / 1000;
-    resultadoValor.textContent = `${kwh.toFixed(2)} kWh/día`;
-  } else {
-    resultadoValor.textContent = "— kWh/día";
-  }
-}
-potenciaInput.addEventListener("input", calcularConsumo);
-horasInput.addEventListener("input", calcularConsumo);
-
 function restaurarTarea(){
   const raw = localStorage.getItem(claveTarea(usuarioActual));
   if (!raw) return;
   const data = JSON.parse(raw);
-  document.getElementById("tarea-aparato").value = data.aparato || "";
-  potenciaInput.value = data.potencia || "";
-  horasInput.value = data.horas || "";
+  document.getElementById("tarea-unidad1").value = data.unidad1 || "";
+  document.getElementById("tarea-unidad2").value = data.unidad2 || "";
+  document.getElementById("tarea-unidad3").value = data.unidad3 || "";
   document.getElementById("tarea-comentario").value = data.comentario || "";
-  calcularConsumo();
   if (data.entregada) {
     document.getElementById("tarea-confirmacion").hidden = false;
     document.getElementById("btn-continuar-tarea").disabled = false;
@@ -410,9 +406,9 @@ function restaurarTarea(){
 document.getElementById("form-tarea").addEventListener("submit", (e) => {
   e.preventDefault();
   const data = {
-    aparato: document.getElementById("tarea-aparato").value.trim(),
-    potencia: potenciaInput.value,
-    horas: horasInput.value,
+    unidad1: document.getElementById("tarea-unidad1").value.trim(),
+    unidad2: document.getElementById("tarea-unidad2").value.trim(),
+    unidad3: document.getElementById("tarea-unidad3").value.trim(),
     comentario: document.getElementById("tarea-comentario").value.trim(),
     entregada: true
   };
@@ -423,7 +419,7 @@ document.getElementById("form-tarea").addEventListener("submit", (e) => {
 });
 
 /* =========================================================
-   PASO 7: CUESTIONARIO
+   PASO 8: CUESTIONARIO
 ========================================================= */
 function construirQuiz(){
   const form = document.getElementById("form-quiz");
@@ -471,7 +467,7 @@ document.getElementById("form-quiz").addEventListener("submit", (e) => {
 });
 
 /* =========================================================
-   PASO 8: CALIFICACIÓN
+   PASO 9: CALIFICACIÓN
 ========================================================= */
 function mostrarCalificacion(){
   marcarPasoCompleto("calificacion");
