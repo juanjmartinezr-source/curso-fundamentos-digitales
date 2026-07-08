@@ -79,7 +79,7 @@ Todas las unidades incluyen actividades prácticas con **Logic Drawer**, una her
 ✅ Videos tutoriales embebidos  
 ✅ Ejemplos resueltos  
 ✅ Ecuaciones booleanas explicadas  
-✅ Guía de referencia en PDF (`guia-fundamentos-digitales.pdf`)  
+✅ Guías de referencia en PDF, personalizadas por unidad (`guia-unidad1.pdf`, `guia-unidad2.pdf`, `guia-unidad3.pdf`)  
 ✅ Simulación de aula virtual con progreso guardado por usuario  
 ✅ Cuestionario final autoevaluable
 
@@ -101,7 +101,13 @@ Al completar este curso, serás capaz de:
 
 ## 📹 Material Multimedia
 
-La Unidad 1 incluye un video tutorial introductorio, y las Unidades 2 y 3 incluyen un video complementario alojado en Google Drive. Todos son accesibles tanto desde las páginas de cada unidad como desde la simulación de aula virtual.
+Cada unidad tiene su propio material audiovisual:
+
+- **Unidad 1:** video "Lógica a Circuitos" + infografía complementaria "Logic to Silicon" (Boole, compuertas universales, Karnaugh, TTL/CMOS)
+- **Unidad 2:** video tutorial de la herramienta Logic Drawer IDE
+- **Unidad 3:** infografía "Guía de Lógica Secuencial" (flip-flops, señales de control, contadores)
+
+Todos accesibles tanto desde las páginas de cada unidad como desde la simulación de aula virtual.
 
 ---
 
@@ -113,7 +119,9 @@ La Unidad 1 incluye un video tutorial introductorio, y las Unidades 2 y 3 incluy
 | Unidad 1 | [Ver](unidad1.html) |
 | Unidad 2 | [Ver](unidad2.html) |
 | Unidad 3 | [Ver](unidad3.html) |
-| Guía de referencia (PDF) | [Descargar](guia-fundamentos-digitales.pdf) |
+| Guía Unidad 1 (PDF) | [Descargar](guia-unidad1.pdf) |
+| Guía Unidad 2 (PDF) | [Descargar](guia-unidad2.pdf) |
+| Guía Unidad 3 (PDF) | [Descargar](guia-unidad3.pdf) |
 | Logic Drawer | [Acceder](https://logicdrawer.app/logic/) |
 
 ---
