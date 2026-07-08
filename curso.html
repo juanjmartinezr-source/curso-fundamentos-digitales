@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electricidad Básica para el Hogar · Curso</title>
+<title>Fundamentos Digitales · Curso</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -53,8 +53,8 @@
     <section id="paso-curso" class="paso paso-activo">
       <div class="tarjeta">
         <p class="etiqueta-modulo">Curso</p>
-        <h3>Electricidad básica para el hogar</h3>
-        <p>Este curso te lleva paso a paso por lo esencial para entender y resolver tareas eléctricas simples y seguras en casa. Al terminar podrás:</p>
+        <h3>Fundamentos Digitales</h3>
+        <p>Este curso te introduce en los conceptos esenciales del álgebra de Boole, circuitos combinacionales y secuenciales. Al terminar podrás:</p>
         <ul class="lista-check" id="lista-temas"></ul>
         <button class="btn btn-primario" data-ir="anuncio">Entrar al curso →</button>
       </div>
@@ -64,16 +64,15 @@
     <section id="paso-anuncio" class="paso">
       <div class="tarjeta anuncio">
         <p class="etiqueta-modulo">Anuncio inicial</p>
-        <h3>Bienvenido(a) al curso ⚡</h3>
+        <h3>Bienvenido(a) al curso 🔌</h3>
         <p class="anuncio-fecha">Publicado por el instructor · Módulo 0</p>
-        <p>Antes de empezar, ten en cuenta estas reglas de seguridad que vas a usar durante todo el curso:</p>
+        <p>Este curso está estructurado en tres unidades principales:</p>
         <ol class="lista-numerada">
-          <li>Nunca trabajes un circuito energizado: siempre baja el breaker correspondiente primero.</li>
-          <li>Verifica con un multímetro que no hay tensión antes de tocar cualquier cable, incluido el neutro.</li>
-          <li>Usa el color de cable correcto: fase, neutro y tierra no se intercambian.</li>
-          <li>Ante cualquier duda, consulta a un electricista certificado. Este curso es una introducción, no reemplaza la asesoría profesional.</li>
+          <li><strong>Unidad 1 — Álgebra de Boole y Compuertas Lógicas:</strong> Aprenderás sistemas de numeración, compuertas básicas, álgebra de Boole y mapas de Karnaugh.</li>
+          <li><strong>Unidad 2 — Circuitos Combinacionales:</strong> Estudiarás multiplexores, decodificadores y sumadores completos.</li>
+          <li><strong>Unidad 3 — Circuitos Secuenciales:</strong> Conocerás flip-flops y contadores básicos para diseñar sistemas secuenciales.</li>
         </ol>
-        <p>En este módulo vas a: descargar una guía de referencia, ver un video sobre el tablero de breakers, participar en el foro, entregar una tarea práctica y presentar un cuestionario final.</p>
+        <p>En este módulo vas a: descargar una guía de referencia, ver un video sobre conceptos fundamentales, participar en el foro, entregar una tarea práctica y presentar un cuestionario fina[...]</p>
         <button class="btn btn-primario" data-ir="documento">Continuar →</button>
       </div>
     </section>
@@ -82,8 +81,8 @@
     <section id="paso-documento" class="paso">
       <div class="tarjeta">
         <p class="etiqueta-modulo">Material de lectura</p>
-        <h3>Guía: Tablero de breakers y Fase / Neutro</h3>
-        <p>Descarga esta guía en PDF con lo esencial sobre el tablero eléctrico, sus partes, y la diferencia entre fase, neutro y tierra.</p>
+        <h3>Guía: Fundamentos de Electrónica Digital</h3>
+        <p>Descarga esta guía en PDF con lo esencial sobre sistemas de numeración, compuertas lógicas y el álgebra de Boole.</p>
         <div class="descarga-caja">
           <div class="descarga-icono" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
@@ -105,7 +104,7 @@
     <section id="paso-video" class="paso">
       <div class="tarjeta">
         <p class="etiqueta-modulo">Video de la clase</p>
-        <h3>Cómo identificar el tablero de breakers</h3>
+        <h3>Introducción a la Electrónica Digital</h3>
         <div class="video-envoltorio">
           <iframe id="video-frame" src="https://youtu.be/VwOkqM4j-ts?si=gkLB6X1ZTlBgm-gP" title="Video del curso" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -124,7 +123,7 @@
       <div class="tarjeta">
         <p class="etiqueta-modulo">Foro de discusión</p>
         <h3>Comparte tu experiencia</h3>
-        <p class="foro-pregunta">¿Ya identificaste el tablero de breakers en tu casa? Cuéntale al grupo qué encontraste (o qué dudas tienes sobre fase, neutro, o el cableado).</p>
+        <p class="foro-pregunta">¿Qué tema de electrónica digital te parece más interesante? Cuéntale al grupo qué te atrae y qué dudas tienes sobre compuertas, álgebra de Boole o circuitos.</p>
 
         <form id="form-foro" class="foro-form">
           <textarea id="foro-texto" rows="3" placeholder="Escribe tu aporte al foro..." required></textarea>
@@ -141,31 +140,31 @@
     <section id="paso-tarea" class="paso">
       <div class="tarjeta">
         <p class="etiqueta-modulo">Tarea</p>
-        <h3>Calcular el consumo de un electrodoméstico</h3>
-        <p>Elige un electrodoméstico de tu casa y calcula su consumo. Usa la fórmula:</p>
-        <p class="formula">Consumo (kWh) = Potencia (W) × Horas de uso al día ÷ 1000</p>
+        <h3>Diseña una tabla de verdad simple</h3>
+        <p>Elige una compuerta lógica básica (AND, OR, NOT, NAND, NOR) y crea su tabla de verdad. Usa la siguiente estructura:</p>
+        <p class="formula">Inputs → Outputs (base 2)</p>
 
         <form id="form-tarea" class="tarea-form">
-          <label for="tarea-aparato">Electrodoméstico</label>
-          <input id="tarea-aparato" type="text" placeholder="Ej: Nevera, plancha, televisor..." required>
+          <label for="tarea-aparato">Compuerta elegida</label>
+          <input id="tarea-aparato" type="text" placeholder="Ej: AND, OR, NOT, NAND, NOR..." required>
 
           <div class="tarea-grid">
             <div>
-              <label for="tarea-potencia">Potencia (Watts)</label>
-              <input id="tarea-potencia" type="number" min="1" placeholder="Ej: 1200" required>
+              <label for="tarea-potencia">Número de entradas</label>
+              <input id="tarea-potencia" type="number" min="1" max="4" placeholder="Ej: 2" required>
             </div>
             <div>
-              <label for="tarea-horas">Horas de uso al día</label>
-              <input id="tarea-horas" type="number" min="0" step="0.1" placeholder="Ej: 2" required>
+              <label for="tarea-horas">Número de filas en tabla</label>
+              <input id="tarea-horas" type="number" min="2" step="1" placeholder="Ej: 4" required>
             </div>
           </div>
 
           <div class="tarea-resultado" id="tarea-resultado">
-            Resultado: <strong id="tarea-resultado-valor">— kWh/día</strong>
+            Resultado: <strong id="tarea-resultado-valor">— filas</strong>
           </div>
 
           <label for="tarea-comentario">Comentario para el instructor (opcional)</label>
-          <textarea id="tarea-comentario" rows="2" placeholder="Notas sobre tu cálculo..."></textarea>
+          <textarea id="tarea-comentario" rows="2" placeholder="Notas sobre tu tabla de verdad..."></textarea>
 
           <button type="submit" class="btn btn-primario btn-ancho">Entregar tarea</button>
         </form>
