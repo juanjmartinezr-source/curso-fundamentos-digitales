@@ -40,88 +40,86 @@ const VIDEOS_UNIDAD = {
 };
 
 const PREGUNTAS = [
+  // --- Unidad 1: Álgebra de Boole y Compuertas Lógicas ---
   {
-    texto: "¿Cuál es la función principal del breaker (interruptor automático)?",
-    opciones: [
-      "Cortar la corriente ante sobrecarga o corto circuito",
-      "Aumentar el voltaje de la casa",
-      "Decorar el tablero eléctrico",
-      "Medir el consumo de agua"
-    ],
-    correcta: 0
-  },
-  {
-    texto: "¿Qué cable se considera normalmente el 'vivo' o de fase?",
-    opciones: ["El verde", "El blanco", "El negro o rojo", "El transparente"],
+    texto: "¿Cuál es el equivalente decimal del número binario 1011?",
+    opciones: ["9", "10", "11", "13"],
     correcta: 2
   },
   {
-    texto: "¿Para qué sirve el cable neutro?",
+    texto: "¿Cuándo entrega un 1 en su salida una compuerta AND de 2 entradas?",
     opciones: [
-      "Cierra el circuito y regresa la corriente a la red",
-      "Solo sirve de adorno",
-      "Aumenta la potencia del circuito",
-      "Conecta la casa a internet"
+      "Cuando al menos una entrada es 1",
+      "Solo cuando ambas entradas son 1",
+      "Cuando las dos entradas son distintas",
+      "Siempre, sin importar las entradas"
+    ],
+    correcta: 1
+  },
+  {
+    texto: "Según la ley de De Morgan, (A · B)' es equivalente a:",
+    opciones: ["A' + B'", "A' · B'", "A + B", "A · B"],
+    correcta: 0
+  },
+  {
+    texto: "En un mapa de Karnaugh, ¿qué representa agrupar celdas adyacentes con 1?",
+    opciones: [
+      "Un error en la tabla de verdad",
+      "Una oportunidad para simplificar la expresión booleana",
+      "Que el circuito no se puede construir",
+      "El número total de compuertas necesarias"
+    ],
+    correcta: 1
+  },
+  // --- Unidad 2: Circuitos Combinacionales ---
+  {
+    texto: "¿Cuál es la función principal de un multiplexor (MUX)?",
+    opciones: [
+      "Seleccionar una de varias entradas y enviarla a una única salida",
+      "Sumar dos números binarios",
+      "Almacenar un bit de información",
+      "Convertir binario a decimal"
     ],
     correcta: 0
   },
   {
-    texto: "En una conexión en serie, si un punto de luz se funde, ¿qué pasa con los demás del mismo circuito?",
-    opciones: [
-      "No pasa nada, siguen encendidos",
-      "También se apagan porque el circuito se interrumpe",
-      "Se vuelven más brillantes",
-      "Se apagan solo los de otro cuarto"
-    ],
-    correcta: 1
+    texto: "En un decodificador, ¿cuántas salidas están activas al mismo tiempo?",
+    opciones: ["Todas", "Ninguna", "Solo una", "La mitad"],
+    correcta: 2
   },
   {
-    texto: "¿Qué tipo de conexión se usa normalmente en las instalaciones domésticas de tomas e iluminación?",
-    opciones: ["En serie", "En paralelo", "Mixta obligatoria", "Ninguna, van sueltas"],
-    correcta: 1
+    texto: "Además de la suma, ¿qué otra señal produce un sumador completo (full adder)?",
+    opciones: ["Un acarreo de salida (Cout)", "Una señal de reloj", "Un bit de paridad", "Una señal de reset"],
+    correcta: 0
   },
+  // --- Unidad 3: Circuitos Secuenciales ---
   {
-    texto: "¿Qué debes hacer antes de instalar un interruptor o una toma?",
+    texto: "¿Cuál es la principal diferencia entre un circuito combinacional y uno secuencial?",
     opciones: [
-      "Nada, se puede trabajar con corriente",
-      "Apagar el breaker del circuito y verificar con multímetro",
-      "Solo avisar a un vecino",
-      "Mojar los cables para verificar"
-    ],
-    correcta: 1
-  },
-  {
-    texto: "Para cambiar una bombilla de forma segura, primero debes:",
-    opciones: [
-      "Apagar el interruptor de esa luz (o el breaker si vas a manipular cables)",
-      "Quitarla con las manos mojadas",
-      "Dejarla encendida para verla mejor",
-      "Cambiarla mientras alguien más usa el interruptor"
+      "El secuencial tiene memoria: su salida depende también del estado anterior",
+      "El combinacional usa más compuertas",
+      "El secuencial no necesita entradas",
+      "No hay ninguna diferencia real"
     ],
     correcta: 0
   },
   {
-    texto: "¿Qué instrumento se usa comúnmente para medir voltaje y verificar si hay corriente?",
-    opciones: ["Un martillo", "Un multímetro", "Un destornillador plano", "Una cinta métrica"],
+    texto: "¿Qué hace un flip-flop tipo D en cada flanco de reloj?",
+    opciones: [
+      "Invierte su salida automáticamente",
+      "Copia el valor de la entrada D a su salida Q",
+      "Suma uno a su valor almacenado",
+      "Apaga el circuito"
+    ],
     correcta: 1
   },
   {
-    texto: "¿Cuál es la fórmula correcta para calcular el consumo de un electrodoméstico en kWh/día?",
+    texto: "¿Para qué se usa principalmente un contador digital?",
     opciones: [
-      "Potencia (W) × Horas ÷ 1000",
-      "Potencia (W) ÷ Horas × 1000",
-      "Horas ÷ Potencia (W)",
-      "Potencia (W) + Horas"
-    ],
-    correcta: 0
-  },
-  {
-    texto: "¿Por qué nunca se debe asumir que el cable neutro está 'sin corriente'?",
-    opciones: [
-      "Porque puede tener tensión respecto a tierra y representar riesgo",
-      "Porque el neutro no existe en la práctica",
-      "Porque es solo un cable decorativo",
-      "Porque el neutro siempre está frío al tacto"
+      "Para llevar un registro secuencial de eventos o pulsos de reloj",
+      "Para decodificar direcciones de memoria",
+      "Para simplificar expresiones booleanas",
+      "Para convertir señales analógicas a digitales"
     ],
     correcta: 0
   }
